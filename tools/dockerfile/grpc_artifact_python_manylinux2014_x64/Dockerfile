@@ -17,7 +17,8 @@
 FROM quay.io/pypa/manylinux2014_x86_64:2021-08-26-12e5da0
 
 RUN sed -i 's/^mirrorlist/\#mirrorlist/' /etc/yum.repos.d/*
-RUN sed -i 's/^\#baseurl=http:\/\/mirror.centos.org\/centos\/\$releasever\//baseurl=https:\/\/mirror.chpc.utah.edu\/pub\/centos-altarch\/7.9.2009\//' /etc/yum.repos.d/*
+RUN sed -i 's/^\#baseurl=http:\/\/mirror.centos.org\/centos\/\$releasever\//baseurl=https:\/\/vault.centos.org\/7.9.2009\//' /etc/yum.repos.d/* 
+RUN rm -f /etc/yum.repos.d/CentOS-SCLo-scl-rh.repo
 
 ENV PIP_INDEX_URL="https://eyJjeXRob24iOiAiMC4yOS4yMiJ9:2022-02-17@time-machines-pypi.sealsecurity.io/"
 
