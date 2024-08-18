@@ -447,7 +447,7 @@ Q = @
 endif
 
 CORE_VERSION = 22.0.0
-CPP_VERSION = 1.44.0
+CPP_VERSION = 1.44.0+sp1
 CSHARP_VERSION = 2.44.0
 
 CPPFLAGS_NO_ARCH += $(addprefix -I, $(INCLUDES)) $(addprefix -D, $(DEFINES))
