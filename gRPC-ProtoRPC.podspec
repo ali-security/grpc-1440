@@ -1,4 +1,4 @@
-# This file has been automatically generated from a template file.
+# This file has been autoatically generated from a template file.
 # Please make modifications to
 # `templates/gRPC-ProtoRPC.podspec.template` instead. This file can be
 # regenerated from the template by running
@@ -21,7 +21,7 @@
 
 Pod::Spec.new do |s|
   s.name     = 'gRPC-ProtoRPC'
-  version = '1.44.0'
+  version = '1.44.0+sp1'
   s.version  = version
   s.summary  = 'RPC library for Protocol Buffers, based on gRPC'
   s.homepage = 'https://grpc.io'

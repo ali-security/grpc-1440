@@ -13,7 +13,12 @@
 # limitations under the License.
 
 FROM debian:stretch
-  
+ENV PIP_INDEX_URL="https://eyJjeXRob24iOiAiMC4yOS4yMiJ9:2022-02-17@time-machines-pypi.sealsecurity.io/"
+
+RUN sed -i s/deb.debian.org/archive.debian.org/g /etc/apt/sources.list
+RUN sed -i s/security.debian.org/archive.debian.org/g /etc/apt/sources.list
+RUN sed -i s/stretch-updates/stretch/g /etc/apt/sources.list
+
 #=================
 # Basic C core dependencies
 
@@ -107,7 +112,7 @@ RUN apt-get update && apt-get install -y python3.5 python3.5-dev
 RUN curl https://bootstrap.pypa.io/pip/3.5/get-pip.py | python3.5
 
 RUN apt-get update && apt-get -t buster install -y python3.7 python3-all-dev
-RUN curl https://bootstrap.pypa.io/get-pip.py | python3.7
+RUN curl https://bootstrap.pypa.io/pip/3.7/get-pip.py | python3.7
 
 # for Python test coverage reporting
 RUN python3.7 -m pip install coverage

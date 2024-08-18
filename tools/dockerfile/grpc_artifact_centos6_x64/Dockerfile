@@ -20,6 +20,11 @@
 
 FROM dockcross/manylinux2010-x64:20210210-84c47e5
 
+RUN sed -i 's/^mirrorlist/\#mirrorlist/' /etc/yum.repos.d/*
+RUN sed -i 's/^\#baseurl=http:\/\/mirror.centos.org\/centos\/\$releasever\//baseurl=https:\/\/vault.centos.org\/6.10\//' /etc/yum.repos.d/*
+
+ENV PIP_INDEX_URL="https://eyJjeXRob24iOiAiMC4yOS4yMiJ9:2022-02-17@time-machines-pypi.sealsecurity.io/"
+
 # Install essential packages.
 RUN yum -y install strace && yum clean all
 

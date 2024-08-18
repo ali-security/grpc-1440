@@ -19,6 +19,11 @@
 # TODO(jtattermusch): Stop building python2.7 wheels.
 FROM quay.io/pypa/manylinux2010_x86_64:2021-02-06-3d322a5
 
+RUN sed -i 's/^mirrorlist/\#mirrorlist/' /etc/yum.repos.d/*
+RUN sed -i 's/^\#baseurl=http:\/\/mirror.centos.org\/centos\/\$releasever\//baseurl=https:\/\/vault.centos.org\/6.10\//' /etc/yum.repos.d/*
+
+ENV PIP_INDEX_URL="https://eyJjeXRob24iOiAiMC4yOS4yMiJ9:2022-02-17@time-machines-pypi.sealsecurity.io/"
+
 # TODO(jtattermusch): revisit which of the deps are really required
 RUN yum update -y && yum install -y curl-devel expat-devel gettext-devel linux-headers openssl-devel zlib-devel gcc
 
