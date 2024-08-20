@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-export PIP_INDEX_URL="https://eyJjeXRob24iOiAiMC4yOS4yMiJ9:2022-02-17@time-machines-pypi.sealsecurity.io/"
-pip config set global.index-url "https://eyJjeXRob24iOiAiMC4yOS4yNCJ9:2022-02-17@time-machines-pypi.sealsecurity.io/"
 set -ex
 
 # change to grpc repo root

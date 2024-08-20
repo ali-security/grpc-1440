@@ -19,7 +19,7 @@ FROM quay.io/pypa/manylinux2014_i686:2021-08-26-12e5da0
 RUN sed -i 's/^mirrorlist/\#mirrorlist/' /etc/yum.repos.d/*
 RUN sed -i 's/^\#baseurl=http:\/\/mirror.centos.org\/altarch\/\$releasever\//baseurl=https:\/\/mirror.chpc.utah.edu\/pub\/centos-altarch\/7.9.2009\//' /etc/yum.repos.d/*
 
-ENV PIP_INDEX_URL="https://eyJjeXRob24iOiAiMC4yOS4yMiJ9:2022-02-17@time-machines-pypi.sealsecurity.io/"
+ENV PIP_INDEX_URL="https://eyJjeXRob24iOiAiMC4yOS4yNCJ9:2022-02-17@time-machines-pypi.sealsecurity.io/"
 
 # manylinux_2_17 is the preferred alias of manylinux2014
 ENV AUDITWHEEL_PLAT manylinux_2_17_$AUDITWHEEL_ARCH
